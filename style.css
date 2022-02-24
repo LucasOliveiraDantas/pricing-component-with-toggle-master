@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: hsl(240, 78%, 98%);
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --color-bg-bt-link-card: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  --color-text-info: hsl(233, 13%, 49%);
+  --color-div-list-info: hsla(234, 14%, 74%, 0.616);
+  --color-pricing: hsl(232, 13%, 33%);
+  --color-info-card: hsl(232, 13%, 33%);
+  --color-info-card-2: linear-gradient(
+    to bottom,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  --color-title: hsl(232, 13%, 33%);
+  --color-info-switch: hsl(234, 14%, 74%);
+  --color-bg-card: rgb(255, 255, 255);
+  --color-bg-switch: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+}
+@media screen and (min-width: 360px) {
+  body {
+    background-image: url(images/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position: 12.2rem -2.3rem;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 2rem;
+  }
+  .title {
+    font-size: 32px;
+    color: var(--color-title);
+  }
+  .area-switch {
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+  }
+  .info-switch {
+    color: var(--color-info-switch);
+  }
+  .switch {
+    width: 55.3px;
+    height: 32px;
+    background-image: var(--color-bg-switch);
+    border-radius: 2rem;
+    position: relative;
+    cursor: pointer;
+  }
+  .switch:hover {
+    opacity: 0.5;
+  }
+  .toggle {
+    opacity: 0;
+  }
+  .slide {
+    position: absolute;
+    top: 0.22rem;
+    left: 0.3rem;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 5rem;
+    transition: all 0.3s;
+  }
+  .toggle:checked + .slide {
+    left: 1.6rem;
+  }
+  /*------------------------------card plans-----------*/
+  .container-cards {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-bg-card);
+    padding: 2.1rem 1.82rem;
+    border-radius: 0.8rem;
+    width: 323.59px;
+    height: auto;
+  }
+  .info-card {
+    font-size: 18px;
+    color: var(--color-info-card);
+  }
+  .info-plan {
+    margin-top: 1.3rem;
+    display: flex;
+    justify-content: center;
+  }
+  .pricing {
+    font-size: 72px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--color-pricing);
+    letter-spacing: -0.1rem;
+  }
+  .sign {
+    font-size: 40px;
+  }
+  /*------------------------------card 2 plans-----------*/
+  .card-2 {
+    background-image: var(--color-info-card-2);
+  }
+  .card-2 .info-card {
+    color: #fff;
+  }
+  .card-2 .pricing {
+    color: #fff;
+  }
+  .card-2 .info {
+    color: #fff;
+  }
+  .card-2 .link-card {
+    background-image: none;
+    background-color: #fff;
+    color: hsl(237, 63%, 64%);
+  }
+
+  /*---------------------------------PRicing------------*/
+  .container-cards .pricing-monthly {
+    display: none;
+  }
+  .container-cards.show-monthly .pricing-monthly {
+    display: flex;
+  }
+  .container-cards.show-monthly .pricing-annually {
+    display: none;
+  }
+  /*---------------------------------LIst info plan------------*/
+  .list-info-plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    border-bottom: 1px solid var(--color-div-list-info);
+  }
+  .item-list {
+    width: 100%;
+    border-top: 1px solid var(--color-div-list-info);
+  }
+  .info {
+    text-align: center;
+    padding: 1rem 0rem;
+    color: var(--color-text-info);
+  }
+  /*---------------------------------LInk card------------*/
+  .link-card {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12.8px;
+    letter-spacing: 0.1rem;
+    margin-top: 2rem;
+    background-image: var(--color-bg-bt-link-card);
+    border: 1px solid;
+    padding: 0.85rem;
+    border-radius: 0.4rem;
+    color: #fff;
+  }
+  .link-card:hover {
+    background-image: none;
+    border: 1px solid hsl(232, 13%, 33%);
+    color: hsl(237, 63%, 64%);
+  }
+  .card-2 .link-card:hover {
+    background-color: transparent;
+    border: 1px solid hsl(0, 0%, 100%);
+    color: #fff;
+  }
+}
+@media screen and (min-width: 1440px) {
+  body {
+    background-image: url(images/bg-bottom.svg), url(images/bg-top.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom left, top right;
+  }
+  .container-cards {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+
+    row-gap: 2rem;
+  }
+  .card-1,
+  .card-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-bg-card);
+    padding: 2.1rem 3rem;
+    border-radius: 0.8rem;
+    width: 323.59px;
+    height: auto;
+  }
+}
